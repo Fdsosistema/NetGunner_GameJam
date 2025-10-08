@@ -7,6 +7,7 @@ public class PlayerBasico : MonoBehaviour
 
     // Força aplicada ao pular
     public float forcaPulo = 8f;
+    public float MultiplicadorPulo = 2f;
 
     // Verificação se está no chão
     public Transform checarChao;
@@ -38,6 +39,12 @@ public class PlayerBasico : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, forcaPulo);
+        }
+
+        // Se o jogador apertar espaço e estiver no chão, pula
+        if (Input.GetKey(KeyCode.LeftControl) && estaNoChao)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, forcaPulo*MultiplicadorPulo);
         }
 
         // Inverte o sprite quando muda de direção (opcional)
