@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class Dash : MonoBehaviour
 {
     public float velocidade = 5f;       // Velocidade normal de movimento
@@ -26,7 +27,7 @@ public class Dash : MonoBehaviour
         rb.linearVelocity = new Vector2(movimento * velocidade, rb.linearVelocity.y);
 
         // Se apertar SHIFT e puder dashing, inicia
-        if (Input.GetKeyDown(KeyCode.LeftShift) && podeDarDash)
+        if (Input.GetKeyDown(KeyCode.G) && podeDarDash)
         {
             StartCoroutine(ExecutarDash(movimento));
         }
