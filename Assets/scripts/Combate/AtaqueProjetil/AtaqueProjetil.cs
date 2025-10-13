@@ -1,25 +1,39 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class AtaqueProjetil : MonoBehaviour
 {
-    public GameObject projetilPrefab;  // Prefab do projétil (bala, magia, etc.)
-    public Transform pontoDisparo;     // Local de onde o projétil é disparado
-    public float velocidadeProjetil = 10f; // Velocidade do disparo
-
+    public GameObject projetilPrefab; 
+    public Transform pontoDisparo;     
+    public float velocidadeProjetil = 10f;
+    public float Cadencia =0.2f;
+    private float nextFire = 0f;
     void Update()
     {
-        // Clique do mouse esquerdo dispara um projétil
-        if (Input.GetMouseButtonDown(0))
+      
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextFire) {
+         nextFire = Time.time + Cadencia;
             Disparar();
+
+        }
+
+
     }
+
+
 
     void Disparar()
     {
-        // Cria o projétil na cena
-        GameObject projetil = Instantiate(projetilPrefab, pontoDisparo.position, pontoDisparo.rotation);
-
-        // Faz o projétil se mover na direção que o jogador está virado
+       
+        Vector3 Mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Mouse.z = 0f;
+    
+        Vector2 direcao = (Mouse - transform.position).normalized;
+      
+        GameObject projetil = Instantiate(projetilPrefab, pontoDisparo.position, Quaternion.identity);
         Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
-        rb.linearVelocity = pontoDisparo.right * velocidadeProjetil;
+        rb.linearVelocity = direcao * velocidadeProjetil;
+
+
     }
 }
