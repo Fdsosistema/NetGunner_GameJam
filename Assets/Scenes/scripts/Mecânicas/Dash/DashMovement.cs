@@ -34,7 +34,7 @@ public class Dash : MonoBehaviour
         rb.linearVelocity = new Vector2(movimento * velocidade, rb.linearVelocity.y);
 
         // Se apertar SHIFT e puder dashing, inicia
-        if (Input.GetKeyDown(KeyCode.G) && podeDarDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && podeDarDash)
         {
             StartCoroutine(ExecutarDash(movimento));
         }
