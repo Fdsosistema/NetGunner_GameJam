@@ -46,7 +46,7 @@ public class AtaqueProjetil : MonoBehaviour
 
     }
 
-    Vector3 DirecaoSpread(Vector3 direcao, float angle)
+    Vector2 DirecaoSpread(Vector2 direcao, float angle)
     {
         float x = Random.Range(-angle / 2f, angle / 2f);
         float y = Random.Range(-angle / 2f, angle / 2f);
