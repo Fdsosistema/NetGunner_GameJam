@@ -37,9 +37,9 @@ public class AtaqueProjetil : MonoBehaviour
 
         for (int i = 0; i < NumeroDeBalas; i++)
         {
-            Vector3 spread = DirecaoSpread(pontoDisparo.forward, spreadAngle);
+            Vector2 spread = DirecaoSpread(direcao, spreadAngle);
 
-            GameObject projetil = Instantiate(projetilPrefab, pontoDisparo.position, Quaternion.LookRotation(spread));
+            GameObject projetil = Instantiate(projetilPrefab, pontoDisparo.position, Quaternion.identity);
             Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
             rb.linearVelocity =  spread * velocidadeProjetil ;
         }
@@ -48,10 +48,10 @@ public class AtaqueProjetil : MonoBehaviour
 
     Vector2 DirecaoSpread(Vector2 direcao, float angle)
     {
-        float x = Random.Range(-angle / 2f, angle / 2f);
-        float y = Random.Range(-angle / 2f, angle / 2f);
+        float x = Random.Range(-angle /2f, angle /3f);
+        float y = Random.Range(-angle / 2f, angle / 3f);
 
-        Quaternion spreadRotacao = Quaternion.Euler(x, y, 0);
+        Quaternion spreadRotacao = Quaternion.Euler(x, y, x);
         return spreadRotacao * direcao;
     }
 
