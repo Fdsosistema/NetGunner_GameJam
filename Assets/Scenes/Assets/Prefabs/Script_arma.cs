@@ -10,6 +10,8 @@ public class Script_arma : MonoBehaviour
 
     private void Start()
     {
+    
+        Cursor.visible = false;
     }
     void Update()
     {
