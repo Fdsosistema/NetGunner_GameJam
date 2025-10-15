@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class Projetil : MonoBehaviour
 {
     public float dano = 10f; // Dano que o projétil causa
