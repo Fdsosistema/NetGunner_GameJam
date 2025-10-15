@@ -39,9 +39,8 @@ public class Dash : MonoBehaviour
             StartCoroutine(ExecutarDash(movimento));
         }
 
-        // Vira o sprite de acordo com a direção
-        if (movimento != 0)
-            transform.localScale = new Vector3(Mathf.Sign(movimento), 1, 1);
+      
+
 
         PodePular = Physics2D.OverlapCircle(checarChao.position, raioChecagem, chaoLayer);
         if (Input.GetKeyDown(KeyCode.Space) && PodePular)

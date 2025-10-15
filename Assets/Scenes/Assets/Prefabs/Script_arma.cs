@@ -1,30 +1,29 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Script_arma : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public GameObject projetilPrefab;
-    public Transform pontoDisparo;
+    public Transform PontoOrigem;
+    [SerializeField] private float VelocidadeRotacao = 60f;
+    [SerializeField] GameObject CursorAim;
 
-    // Update is called once per frame
+    private void Start()
+    {
+    }
     void Update()
     {
-        
+        Cursor.visible = false;
+        Vector2 direcao = Camera.main.ScreenToWorldPoint(Input.mousePosition) - PontoOrigem.position;
+        float angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
+        Quaternion rotacao = Quaternion.AngleAxis(angulo, Vector3.forward);
+        PontoOrigem.rotation = Quaternion.Slerp(PontoOrigem.rotation, rotacao, VelocidadeRotacao * Time.deltaTime);
+
+        Vector2 cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        CursorAim.transform.position = cursor;
     }
 
-    void Disparar()
-    {
+   
 
-
-        Vector3 mouse = Input.mousePosition;
-        Vector3 PontoCena = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 offset = new Vector2(mouse.x - PontoCena.x, mouse.z - PontoCena.z);
-        //Vector3 angulo = Mathf.Atan2(offset.z, offset.x) * Mathf.Rad2Deg;
-
-
-
-
-    }
 
 }
