@@ -6,7 +6,7 @@ public class AtaqueProjetil : MonoBehaviour
     public GameObject projetilPrefab; 
     public Transform pontoDisparo;     
     public float velocidadeProjetil = 10f;
-    public float Cadencia =0.2f;
+    public float TempoParaProximoTiro =0.2f;
     private float nextFire = 0f;
     public float spreadAngle = 15f;
         public int NumeroDeBalas = 8;
@@ -17,7 +17,7 @@ public class AtaqueProjetil : MonoBehaviour
     {
       
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFire) {
-         nextFire = Time.time + Cadencia;
+         nextFire = Time.time + TempoParaProximoTiro;
             Disparar();
 
         }
