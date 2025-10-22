@@ -12,6 +12,8 @@ public class projetil_boss : MonoBehaviour
     private Vector3 pontoAnterior;
     private Vector3 deslocamnto;
     public bool VaiRepetir = false;
+    private float nextAtack = 3f;
+    public float TempoentreAtaques = 0f;
 
     private void Start()
     {
@@ -21,14 +23,20 @@ public class projetil_boss : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, alvo, velocidadeAtaque * Time.deltaTime);
+        
+            transform.position = Vector3.MoveTowards(transform.position, alvo, velocidadeAtaque * Time.deltaTime);
         deslocamnto = transform.position - deslocamnto;
         pontoAnterior = transform.position;
+       
 
-        if(VaiRepetir == true && Vector3.Distance(transform.position, alvo) < 0.1f)
+        if (VaiRepetir == true && Vector3.Distance(transform.position, alvo) < 0.1f)
         {
             alvo = (alvo == PontoInicial.position) ? PontoFinal.position : PontoInicial.position;
-        };
+        }
+        else if (Vector3.Distance(transform.position, alvo) < 0.1f && VaiRepetir == false) {
+            Destroy(gameObject);
+        }
+        ;
 
     }
 }
