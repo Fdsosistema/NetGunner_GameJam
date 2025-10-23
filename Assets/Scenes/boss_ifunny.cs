@@ -1,5 +1,7 @@
 using UnityEngine;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class boss_ifunny : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class boss_ifunny : MonoBehaviour
     public GameObject Ataque1_C;
     public GameObject Ataque2Aviso_A;
     public GameObject Ataque2_A;
+    public GameObject Ataque2Aviso_B;
+    public GameObject Ataque2_B;
 
 
     private float nextAtack = 5f;
@@ -18,12 +22,17 @@ public class boss_ifunny : MonoBehaviour
     public float velocidadeAtaque = 5f;
     public Transform PontoA;
     private float TempoParaORaio = 2f;
+    private float delayif = 1.5f;
 
 
     private void Start()
     {
         functions = new Action[]
           {
+           Funcao2_B,
+           Funcao1_A,
+           Funcao1_B,
+           Funcao1_C,
            Funcao2_A,
           };
     }
@@ -41,7 +50,7 @@ public class boss_ifunny : MonoBehaviour
             nextAtack = Time.time + TempoentreAtaques;
 
             ChamarFuncaoAleatoria();
-
+            
         }
     
     }
@@ -75,11 +84,48 @@ public class boss_ifunny : MonoBehaviour
     {
         GameObject ataqueAviso = Instantiate(Ataque2Aviso_A, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
 
+        StartCoroutine(Tempo());
 
-       
-          Destroy(ataqueAviso);
+        IEnumerator Tempo()
+        {
+            yield return new WaitForSeconds(2);
+
+            Destroy(ataqueAviso);
             GameObject AtaqueRaio = Instantiate(Ataque2_A, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
-        
+
+            StartCoroutine(DestruirAposTempo());
+
+            IEnumerator DestruirAposTempo()
+            {
+                yield return new WaitForSeconds(1);
+                Destroy(AtaqueRaio);
+            }
+        }
     }
+
+    void Funcao2_B()
+    {
+        GameObject ataqueAvisoB = Instantiate(Ataque2Aviso_B, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
+
+        StartCoroutine(Tempo());
+
+        IEnumerator Tempo()
+        {
+            yield return new WaitForSeconds(2);
+
+            Destroy(ataqueAvisoB);
+            GameObject AtaqueRaioB = Instantiate(Ataque2_B, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
+
+            StartCoroutine(DestruirAposTempo());
+
+            IEnumerator DestruirAposTempo()
+            {
+                yield return new WaitForSeconds(1);
+                Destroy(AtaqueRaioB);
+            }
+        }
+    }
+
+
 
 }

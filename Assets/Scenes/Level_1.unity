@@ -436,7 +436,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 3c52bee584ca89041a35254f4b3a0145, type: 3}
   m_Color: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
   m_FlipX: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
   quantidadePiscos: 4
   forcaRecuo: 5
   tempoInvulneravel: 1
-  duracaoKnockback: 0.2
+  duracaoKnockback: 0.22
 --- !u!114 &857953269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ GameObject:
   - component: {fileID: 1287723012}
   - component: {fileID: 1287723013}
   m_Layer: 8
-  m_Name: Circle
+  m_Name: Boss
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,6 +1337,8 @@ MonoBehaviour:
   Ataque1_C: {fileID: 5818834588553242678, guid: aa41306565f9e3f4c9fadce83c0a2682, type: 3}
   Ataque2Aviso_A: {fileID: 7464590764817401741, guid: c290a31640e436548a923e619ba598b0, type: 3}
   Ataque2_A: {fileID: 3343507560404645977, guid: a4ca6a1ac93372a46b2e9f23e7422705, type: 3}
+  Ataque2Aviso_B: {fileID: 3633269461914956269, guid: 20a301acf5bfe15459289ea3ec0c7da3, type: 3}
+  Ataque2_B: {fileID: 6052830202463817598, guid: a81056364de27474baa08fbc912c26d3, type: 3}
   TempoMinimoentreAtaques: 6
   TempoMaximoentreAtaques: 18
   velocidadeAtaque: 5
