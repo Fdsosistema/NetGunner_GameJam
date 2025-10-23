@@ -35,6 +35,8 @@ public class projetil_boss : MonoBehaviour
         }
         else if (Vector3.Distance(transform.position, alvo) < 0.1f && VaiRepetir == false) {
             Destroy(gameObject);
+       
+       
         }
         ;
 
