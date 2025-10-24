@@ -21,7 +21,8 @@ public class Projetil : MonoBehaviour
         if (colisao.CompareTag("Inimigo"))
         {
             colisao.GetComponent<Vida>()?.ReceberDano(dano);
+            colisao.GetComponent<Vida_boss>()?.ReceberDano(dano);
             Destroy(gameObject);
-        }
+        } 
     }
 }

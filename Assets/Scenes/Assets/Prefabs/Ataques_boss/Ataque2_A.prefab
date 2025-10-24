@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 541545390124651519}
   - component: {fileID: 178545187692912734}
   - component: {fileID: 6986249956789070872}
+  - component: {fileID: 6544117132442396315}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -196,6 +197,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6544117132442396315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561178918605218404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cd046d0e2a2204e86edda0e0aa0d1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 10
 --- !u!1 &7630260406543224508
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +222,7 @@ GameObject:
   - component: {fileID: 2093953006529778521}
   - component: {fileID: 8579842915247128594}
   - component: {fileID: 227393993085455815}
+  - component: {fileID: 6500801269704299606}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -358,6 +373,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6500801269704299606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630260406543224508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cd046d0e2a2204e86edda0e0aa0d1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 10
 --- !u!1 &8801649747132689029
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +398,7 @@ GameObject:
   - component: {fileID: 7676486776768845787}
   - component: {fileID: 5775119761759471135}
   - component: {fileID: 7476911918538110058}
+  - component: {fileID: 8570971486796779268}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -520,3 +549,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8570971486796779268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801649747132689029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cd046d0e2a2204e86edda0e0aa0d1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 10

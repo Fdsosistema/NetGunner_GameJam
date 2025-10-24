@@ -21,9 +21,9 @@ public class AtaqueProjetil : MonoBehaviour
             Disparar();
 
         }
+        
 
-
-    }
+    } 
 
 
 

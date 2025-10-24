@@ -646,7 +646,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 192319063310966150, guid: 57276daf9db78ed4c846c1f4bc1a3539, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1452563313840941281, guid: 57276daf9db78ed4c846c1f4bc1a3539, type: 3}
       propertyPath: m_LocalScale.x
@@ -705,6 +705,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57276daf9db78ed4c846c1f4bc1a3539, type: 3}
+--- !u!1 &383564718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383564719}
+  m_Layer: 0
+  m_Name: PontoInicial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383564719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383564718}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.55768, y: 7.423934, z: 0.07659568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 384363046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &384363045
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +765,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 383564719}
+  - {fileID: 866566312}
+  - {fileID: 423110039}
   - {fileID: 1287723011}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -762,11 +796,11 @@ Transform:
   m_GameObject: {fileID: 423110038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -1.51, z: -0.004892137}
-  m_LocalScale: {x: 0.170651, y: 0.170651, z: 0.170651}
+  m_LocalPosition: {x: -10.674882, y: -1.4245348, z: 0.047928184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1287723011}
+  m_Father: {fileID: 384363046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &537813555
 GameObject:
@@ -831,11 +865,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 857953265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &809936786 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7494005438452925618, guid: 4d5e4edbc712e2a45bab974c532e26db, type: 3}
-  m_PrefabInstance: {fileID: 3768651244064549763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &814513078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -898,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537012210132377131, guid: 954f8d92b0da5c545ac3d16f46b7a683, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -920,10 +949,9 @@ GameObject:
   - component: {fileID: 857953266}
   - component: {fileID: 857953267}
   - component: {fileID: 857953268}
-  - component: {fileID: 857953269}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -989,7 +1017,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1109,7 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b38b3675eaf60a409a3d181b43691a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projetilPrefab: {fileID: 809936786}
+  projetilPrefab: {fileID: 7494005438452925618, guid: 4d5e4edbc712e2a45bab974c532e26db, type: 3}
   pontoDisparo: {fileID: 857953265}
   velocidadeProjetil: 15
   TempoParaProximoTiro: 3
@@ -1124,33 +1152,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 857953260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5821cfdf5981d04194ad9f78b313615, type: 3}
+  m_Script: {fileID: 11500000, guid: 50a62905ced37da4e9acd3dd1b8aa297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMaxima: 100
   duracaoPiscar: 0.15
-  quantidadePiscos: 4
-  forcaRecuo: 5
   tempoInvulneravel: 1
-  duracaoKnockback: 0.22
---- !u!114 &857953269
-MonoBehaviour:
+  quantidadePiscos: 4
+--- !u!1 &866566311
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857953260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aacac8b91377e7e4ba3c47804d06d434, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dano: 10
-  alcance: 1
-  pontoAtaque: {fileID: 742816754}
-  inimigoLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866566312}
+  m_Layer: 0
+  m_Name: PontoFinal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &866566312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866566311}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20.01, y: 2.01, z: 0.061717026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 384363046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975697125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,9 +1306,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1287723011}
   - component: {fileID: 1287723010}
-  - component: {fileID: 1287723009}
   - component: {fileID: 1287723012}
   - component: {fileID: 1287723013}
+  - component: {fileID: 1287723014}
+  - component: {fileID: 1287723015}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Inimigo
@@ -1277,19 +1317,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1287723009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287723008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50a62905ced37da4e9acd3dd1b8aa297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaMaxima: 100
 --- !u!212 &1287723010
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1334,8 +1361,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4309bc7be6a358d49beb8c42d389f5ef, type: 3}
-  m_Color: {r: 0.98679185, g: 1, b: 0.13679248, a: 1}
+  m_Sprite: {fileID: 1994717437632991298, guid: 628bb4fa563fc4c4eb054ed8c9140f19, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1357,8 +1384,7 @@ Transform:
   m_LocalPosition: {x: -10.557684, y: 7.423934, z: 0.07659568}
   m_LocalScale: {x: 5.859913, y: 5.859913, z: 5.859913}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 423110039}
+  m_Children: []
   m_Father: {fileID: 384363046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1287723012
@@ -1416,10 +1442,71 @@ MonoBehaviour:
   Ataque2_A: {fileID: 3343507560404645977, guid: a4ca6a1ac93372a46b2e9f23e7422705, type: 3}
   Ataque2Aviso_B: {fileID: 3633269461914956269, guid: 20a301acf5bfe15459289ea3ec0c7da3, type: 3}
   Ataque2_B: {fileID: 6052830202463817598, guid: a81056364de27474baa08fbc912c26d3, type: 3}
+  PontoDisparoBoss: {fileID: 1287723011}
+  PontoPlayer: {fileID: 857953265}
+  PontoInicialAnimacao: {fileID: 383564719}
+  PontoFinalAnimacao: {fileID: 866566312}
+  OlhosBrilantes: {fileID: 1466508564969899860, guid: fa542ab0b2ee68d43ac03a742c43e3a2, type: 3}
+  IfunnyNormal: {fileID: 1994717437632991298, guid: 628bb4fa563fc4c4eb054ed8c9140f19, type: 3}
+  Eletricidade: {fileID: 1466508564969899860, guid: fa542ab0b2ee68d43ac03a742c43e3a2, type: 3}
   TempoMinimoentreAtaques: 3
   TempoMaximoentreAtaques: 6
-  velocidadeAtaque: 5
   PontoA: {fileID: 423110039}
+  spreadAngle: 100
+  NumeroDeProjeteis: 8
+  VelocidadeProjetilEletrico: 18
+  Ataque2C1Aviso: {fileID: 6313275613345869685, guid: 7057f04b85fc27c4f85c2692ec21b4a8, type: 3}
+  Ataque2C1: {fileID: 5871056771707363973, guid: 655f30e77f32a5c44b478215ff9efc86, type: 3}
+  Ataque2C2Aviso: {fileID: 8837830247053692981, guid: 8b659a6c54537be4a9556974d9c4aab6, type: 3}
+  Ataque2C2: {fileID: 3418940066893016442, guid: 2285d7d2502b00942a23b87ae8a91e9b, type: 3}
+  Ataque2C3Aviso: {fileID: 7928193083299724413, guid: 93cbeb038dad89f49a3b8748d71905d9, type: 3}
+  Ataque2C3: {fileID: 1323773207112938169, guid: b0cdba64e50dc3a46be20d91447a5dd9, type: 3}
+  Ataque2C4Aviso: {fileID: 5995766720708764484, guid: 20a4c0b90bddc3f4ea44f8afec478166, type: 3}
+  Ataque2C4: {fileID: 7439964308714278214, guid: 8f603b84341b1c9448ab19d7fb4a2130, type: 3}
+  AtaqueEletrico: {fileID: 4407483246046150032, guid: d6b00e5d272f40f4db0543a08e359f34, type: 3}
+--- !u!50 &1287723014
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287723008}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1287723015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287723008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e8bee430e805f44999f0d90db297ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 100
+  duracaoPiscar: 0.15
+  quantidadePiscos: 1
+  Brilho: 5
 --- !u!1 &1317077732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,7 +1851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537012210132377131, guid: 954f8d92b0da5c545ac3d16f46b7a683, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1781,7 +1868,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 192319063310966150, guid: 57276daf9db78ed4c846c1f4bc1a3539, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1452563313840941281, guid: 57276daf9db78ed4c846c1f4bc1a3539, type: 3}
       propertyPath: m_LocalScale.x

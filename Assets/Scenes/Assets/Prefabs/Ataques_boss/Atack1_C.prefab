@@ -182,7 +182,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   velocidadeAtaque: 15
   PontoInicial: {fileID: 2291952951860280413}
   PontoFinal: {fileID: 3388940614149035745}
-  VaiRepetir: 0
+  dano: 10
 --- !u!1 &5576428861468187715
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   velocidadeAtaque: 15
   PontoInicial: {fileID: 9215191906392042215}
   PontoFinal: {fileID: 5526532931912702045}
-  VaiRepetir: 0
+  dano: 10
 --- !u!1 &5818834588553242678
 GameObject:
   m_ObjectHideFlags: 0

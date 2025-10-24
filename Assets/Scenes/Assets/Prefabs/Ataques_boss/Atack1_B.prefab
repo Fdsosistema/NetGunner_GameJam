@@ -216,7 +216,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -274,4 +274,4 @@ MonoBehaviour:
   velocidadeAtaque: 15
   PontoInicial: {fileID: 3656320847344556770}
   PontoFinal: {fileID: 6887536979144452030}
-  VaiRepetir: 0
+  dano: 10

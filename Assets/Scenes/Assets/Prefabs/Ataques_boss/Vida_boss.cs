@@ -3,25 +3,23 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class Vida : MonoBehaviour
+public class Vida_boss : MonoBehaviour
 {
     [Header("Configuração de Vida")]
-    public float vidaMaxima = 100f; 
+    public float vidaMaxima = 100f;
     private float vidaAtual;
 
     [Header("Feedback de Dano")]
     public float duracaoPiscar = 0.15f;
-    public float tempoInvulneravel = 1f;
-    private bool invulneravel = false;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     public int quantidadePiscos = 4;
+    public float Brilho = 15f;
   
-   
 
     void Start()
     {
-       
+
         vidaAtual = vidaMaxima;
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -30,16 +28,15 @@ public class Vida : MonoBehaviour
 
     public void ReceberDano(float dano)
     {
-
-        if (invulneravel) return; // Ignora se estiver invulnerável
+    
 
         vidaAtual -= dano;
         Debug.Log($"{gameObject.name} recebeu {dano} de dano. Vida restante: {vidaAtual}");
 
-        // Inicia piscar
+
         StartCoroutine(Piscar());
-        StartCoroutine(TornarInvulneravel());
-   
+
+
 
         if (vidaAtual <= 0)
             Morrer();
@@ -47,27 +44,22 @@ public class Vida : MonoBehaviour
 
     void Morrer()
     {
-       
+
         Debug.Log($"{gameObject.name} morreu!");
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 
-     IEnumerator Piscar()
+    IEnumerator Piscar()
     {
         for (int i = 0; i < quantidadePiscos; i++)
         {
-            spriteRenderer.enabled = false;
+            spriteRenderer.color *= Brilho;
             yield return new WaitForSeconds(duracaoPiscar);
-            spriteRenderer.enabled = true;
+            spriteRenderer.color /= Brilho;
             yield return new WaitForSeconds(duracaoPiscar);
         }
     }
 
-    private IEnumerator TornarInvulneravel()
-    {
-        invulneravel = true;
-        yield return new WaitForSeconds(tempoInvulneravel);
-        invulneravel = false;
-    }
+
 
 }
