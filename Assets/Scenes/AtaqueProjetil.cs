@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class AtaqueProjetil : MonoBehaviour
     private float nextFire = 0f;
     public float spreadAngle = 15f;
         public int NumeroDeBalas = 8;
+   
 
 
 
@@ -19,6 +21,8 @@ public class AtaqueProjetil : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFire) {
          nextFire = Time.time + TempoParaProximoTiro;
             Disparar();
+
+
 
         }
         
@@ -43,6 +47,8 @@ public class AtaqueProjetil : MonoBehaviour
             Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
             rb.linearVelocity =  spread * velocidadeProjetil ;
         }
+
+    
 
     }
 

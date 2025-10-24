@@ -7,6 +7,8 @@ public class Script_arma : MonoBehaviour
     public Transform PontoOrigem;
     [SerializeField] private float VelocidadeRotacao = 60f;
     [SerializeField] GameObject CursorAim;
+    private SpriteRenderer RecarregarRenderer;
+    [SerializeField] GameObject Recarregar;
 
     private void Start()
     {
@@ -23,9 +25,14 @@ public class Script_arma : MonoBehaviour
 
         Vector2 cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         CursorAim.transform.position = cursor;
-    }
 
-   
+        if (Input.GetMouseButtonDown(0))
+        {
+            Recarregar.transform.position = cursor;
+
+        }
+    }
+    
 
 
 }
