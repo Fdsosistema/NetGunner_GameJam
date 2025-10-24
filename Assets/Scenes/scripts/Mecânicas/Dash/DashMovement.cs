@@ -43,13 +43,13 @@ public class Dash : MonoBehaviour
 
 
         PodePular = Physics2D.OverlapCircle(checarChao.position, raioChecagem, chaoLayer);
-        if (Input.GetKeyDown(KeyCode.Space) && PodePular)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && PodePular)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, forcaPulo);
         }
 
         // Se o jogador apertar espaço e estiver no chão, pula
-        if (Input.GetKey(KeyCode.LeftControl) && PodePular)
+        if (Input.GetKey(KeyCode.Space) && PodePular)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, forcaPulo * MultiplicadorPulo);
         }

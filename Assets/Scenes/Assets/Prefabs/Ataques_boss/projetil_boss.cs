@@ -42,8 +42,8 @@ public class projetil_boss : MonoBehaviour
     {
         if (collision.CompareTag("Player")){
             collision.GetComponent<Vida>()?.ReceberDano(dano);
-            collision.GetComponent<Vida_boss>()?.ReceberDano(dano);
-            Destroy(gameObject);
+            collision.GetComponent<PlayerHealthSlider>()?.TakeDamage(dano);
+
         }
     }
 

@@ -26,6 +26,7 @@ public class Projetil_eletrico : MonoBehaviour
         if (colisao.CompareTag("Player"))
         {
             colisao.GetComponent<Vida>()?.ReceberDano(dano);
+            colisao.GetComponent<PlayerHealthSlider>()?.TakeDamage(dano);
             Destroy(gameObject);
         }
     }

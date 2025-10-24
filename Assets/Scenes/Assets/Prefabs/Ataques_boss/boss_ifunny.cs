@@ -54,6 +54,13 @@ public class boss_ifunny : MonoBehaviour
         functions = new Action[]
           {
       Funcao1_A,
+      Funcao1_B,
+      Funcao1_C,
+      Funcao2_A,
+      Funcao2_B,
+      Funcao2_C,
+      Funcao3
+
     
           };
 
