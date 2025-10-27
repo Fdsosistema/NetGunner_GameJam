@@ -37,7 +37,7 @@ public class boss_ifunny : MonoBehaviour
     public float spreadAngle = 90f;
     public int NumeroDeProjeteis = 8;
     public float VelocidadeProjetilEletrico = 10f;
-    private float velocidadeAtaque = 10f;
+    public float velocidadeAtaque = 20f;
     private bool EntrouCena = false;
 
     public GameObject Ataque2C1Aviso;
@@ -55,14 +55,13 @@ public class boss_ifunny : MonoBehaviour
         functions = new Action[]
           {
   Funcao1_A,
-  Funcao1_B,
-  Funcao1_C,
-  Funcao2_A,
-  Funcao2_B,
-  Funcao2_C,
-      Funcao3,
-      Funcao3_B
-    
+ Funcao1_B,
+ Funcao1_C,
+ Funcao2_A,
+ Funcao2_B,
+ Funcao2_C,
+ Funcao3,
+ Funcao3_B,
           };
 
 
@@ -116,7 +115,7 @@ public class boss_ifunny : MonoBehaviour
             pontoAnterior = transform.position;
             yield return null;
         }
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(0.5f);
             GameObject ataque1A = Instantiate(Ataque1_A,PontoA.position , Quaternion.identity);
 
             yield return new WaitForSeconds(0.5f);
@@ -136,7 +135,7 @@ public class boss_ifunny : MonoBehaviour
         StartCoroutine(PodeAtacarTrue1A());
         IEnumerator PodeAtacarTrue1A()
         {
-            yield return new WaitForSeconds(5.5f);
+            yield return new WaitForSeconds(3f);
             podeAtacar = true;
         }
 
