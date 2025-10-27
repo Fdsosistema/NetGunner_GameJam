@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -49,7 +50,8 @@ public class Vida : MonoBehaviour
     {
        
         Debug.Log($"{gameObject.name} morreu!");
-        Destroy(gameObject); 
+        Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 
      IEnumerator Piscar()

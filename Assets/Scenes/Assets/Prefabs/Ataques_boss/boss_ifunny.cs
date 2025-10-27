@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class boss_ifunny : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class boss_ifunny : MonoBehaviour
     public int NumeroDeProjeteis = 8;
     public float VelocidadeProjetilEletrico = 10f;
     private float velocidadeAtaque = 10f;
-
+    private bool EntrouCena = false;
 
     public GameObject Ataque2C1Aviso;
     public GameObject Ataque2C1;
@@ -71,12 +72,16 @@ public class boss_ifunny : MonoBehaviour
     void Update()
     {
 
-
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetMouseButtonDown(0) || 
+            Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            EntrouCena = true;
+        }
 
         float TempoentreAtaques = UnityEngine.Random.Range(TempoMinimoentreAtaques, TempoMaximoentreAtaques);
        
         
-        if (Time.time >= nextAtack && podeAtacar == true)
+        if (Time.time >= nextAtack && podeAtacar == true && EntrouCena == true)
         {
             nextAtack = Time.time + TempoentreAtaques;
 
