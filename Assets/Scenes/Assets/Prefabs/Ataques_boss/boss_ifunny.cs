@@ -53,14 +53,14 @@ public class boss_ifunny : MonoBehaviour
     {
         functions = new Action[]
           {
-      Funcao1_A,
-      Funcao1_B,
-      Funcao1_C,
-      Funcao2_A,
-      Funcao2_B,
-      Funcao2_C,
-      Funcao3
-
+  Funcao1_A,
+  Funcao1_B,
+  Funcao1_C,
+  Funcao2_A,
+  Funcao2_B,
+  Funcao2_C,
+      Funcao3,
+      Funcao3_B
     
           };
 
@@ -547,7 +547,7 @@ public class boss_ifunny : MonoBehaviour
             IEnumerator Espera()
             {
                 {
-
+                    Vector2 direcao = (PontoPlayer.position - transform.position).normalized;
                     yield return new WaitForSeconds(0.75f);
 
                     for (int i = 0; i < NumeroDeProjeteis; i++)
@@ -603,7 +603,112 @@ public class boss_ifunny : MonoBehaviour
         }
 
     }
-        Vector2 DirecaoSpread(Vector2 direcao, float angle)
+
+
+
+    void Funcao3_B()
+    {
+        podeAtacar = false;
+
+
+
+
+        Vector3 alvo = new Vector2(-9f, 7.423934f);
+
+
+
+        StartCoroutine(Ataque3_B());
+
+        IEnumerator Ataque3_B()
+        {
+
+            OlhosBrilantesRenderer = GetComponent<SpriteRenderer>();
+            OlhosBrilantesRenderer.sprite = OlhosBrilantes;
+
+            while (Vector3.Distance(transform.position, alvo) > 0.01f)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, alvo, velocidadeAtaque * Time.deltaTime);
+                pontoAnterior = transform.position;
+                yield return null;
+            }
+            yield return new WaitForSeconds(0.5f);
+
+
+            Vector2 direcao = (PontoPlayer.position - transform.position).normalized;
+
+            for (int i = 0; i < NumeroDeProjeteis; i++)
+            {
+                Vector2 spread = DirecaoSpread(direcao, spreadAngle);
+                GameObject ataqueEletricoRaio = Instantiate(AtaqueEletrico, PontoDisparoBoss.position, Quaternion.identity);
+                Rigidbody2D rb = ataqueEletricoRaio.GetComponent<Rigidbody2D>();
+                rb.linearVelocity = spread * VelocidadeProjetilEletrico;
+            }
+
+            StartCoroutine(Espera());
+
+            IEnumerator Espera()
+            {
+                {
+         
+                    yield return new WaitForSeconds(0.75f);
+
+                    for (int i = 0; i < NumeroDeProjeteis; i++)
+                    {
+
+                        Vector2 spread = DirecaoSpread(direcao, spreadAngle);
+                        GameObject ataqueEletricoRaio = Instantiate(AtaqueEletrico, PontoDisparoBoss.position, Quaternion.identity);
+                        Rigidbody2D rb = ataqueEletricoRaio.GetComponent<Rigidbody2D>();
+                        rb.linearVelocity = spread * VelocidadeProjetilEletrico;
+                    }
+
+                    yield return new WaitForSeconds(1.5f);
+
+                    for (int i = 0; i < NumeroDeProjeteis; i++)
+                    {
+
+                        Vector2 spread = DirecaoSpread(direcao, spreadAngle);
+                        GameObject ataqueEletricoRaio = Instantiate(AtaqueEletrico, PontoDisparoBoss.position, Quaternion.identity);
+                        Rigidbody2D rb = ataqueEletricoRaio.GetComponent<Rigidbody2D>();
+                        rb.linearVelocity = spread * VelocidadeProjetilEletrico;
+                    }
+
+
+
+                }
+            }
+
+
+
+            yield return new WaitForSeconds(2.5f);
+            if (Vector3.Distance(transform.position, alvo) < 0.01f)
+            {
+                alvo = (alvo == PontoInicialAnimacao.position) ? PontoFinalAnimacao.position : PontoInicialAnimacao.position;
+                while (Vector3.Distance(transform.position, alvo) > 0.01f)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, alvo, velocidadeAtaque * Time.deltaTime);
+                    pontoAnterior = transform.position;
+                    OlhosBrilantesRenderer.sprite = IfunnyNormal;
+                    yield return null;
+                }
+            }
+        }
+
+
+
+
+
+        StartCoroutine(PodeAtacarTrue2B());
+        IEnumerator PodeAtacarTrue2B()
+        {
+            yield return new WaitForSeconds(7.5f);
+            podeAtacar = true;
+        }
+
+    }
+
+
+
+    Vector2 DirecaoSpread(Vector2 direcao, float angle)
         {
             float x = UnityEngine.Random.Range(-angle / 2f, angle / 3f);
             float y = UnityEngine.Random.Range(-angle / 2f, angle / 3f);

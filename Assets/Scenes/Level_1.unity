@@ -1543,7 +1543,7 @@ MonoBehaviour:
   TempoMinimoentreAtaques: 2
   TempoMaximoentreAtaques: 6
   PontoA: {fileID: 423110039}
-  spreadAngle: 100
+  spreadAngle: 70
   NumeroDeProjeteis: 8
   VelocidadeProjetilEletrico: 18
   Ataque2C1Aviso: {fileID: 6313275613345869685, guid: 7057f04b85fc27c4f85c2692ec21b4a8, type: 3}
