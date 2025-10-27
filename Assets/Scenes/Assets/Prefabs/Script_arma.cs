@@ -60,7 +60,7 @@ public class Script_arma : MonoBehaviour
 
     IEnumerator EsperarRecarga()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         Atirou = false;
         EstaCarregando = false;
         Recarregar.SetActive(false );

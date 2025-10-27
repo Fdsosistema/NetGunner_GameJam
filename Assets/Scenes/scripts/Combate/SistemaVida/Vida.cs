@@ -52,6 +52,7 @@ public class Vida : MonoBehaviour
         Debug.Log($"{gameObject.name} morreu!");
         Destroy(gameObject);
         SceneManager.LoadScene("GameOver");
+        Cursor.visible = true;
     }
 
      IEnumerator Piscar()
