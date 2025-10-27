@@ -1,4 +1,6 @@
+using System.Collections;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Script_arma : MonoBehaviour
@@ -9,10 +11,14 @@ public class Script_arma : MonoBehaviour
     [SerializeField] GameObject CursorAim;
     private SpriteRenderer RecarregarRenderer;
     [SerializeField] GameObject Recarregar;
+    private bool Atirou = false;
+    private float nextFire = 0f;
+
+    private bool EstaCarregando = false;
 
     private void Start()
     {
-    
+      
         Cursor.visible = false;
     }
     void Update()
@@ -24,15 +30,41 @@ public class Script_arma : MonoBehaviour
         PontoOrigem.rotation = Quaternion.Slerp(PontoOrigem.rotation, rotacao, VelocidadeRotacao * Time.deltaTime);
 
         Vector2 cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        CursorAim.transform.position = cursor;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && EstaCarregando == false )
         {
-            Recarregar.transform.position = cursor;
-
+            Atirou = true;
+            EstaCarregando=true;
+            StartCoroutine(EsperarRecarga());
         }
+
+
+        if (Atirou == false)
+        {
+            CursorAim.SetActive(true);
+            CursorAim.transform.position = cursor;
+        } else if(Atirou == true)
+        {
+            Recarregar.SetActive(true);
+            CursorAim.SetActive(false);
+            Recarregar.transform.position = cursor;
+           
+        }
+
+
     }
     
+   
+ 
+
+
+    IEnumerator EsperarRecarga()
+    {
+        yield return new WaitForSeconds(3);
+        Atirou = false;
+        EstaCarregando = false;
+        Recarregar.SetActive(false );
+    }
 
 
 }
