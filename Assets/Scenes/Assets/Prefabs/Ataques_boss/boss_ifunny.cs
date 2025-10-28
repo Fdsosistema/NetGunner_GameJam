@@ -24,12 +24,14 @@ public class boss_ifunny : MonoBehaviour
     public Sprite OlhosBrilantes;
     public Sprite IfunnyNormal;
     public Sprite Eletricidade;
+    public Sprite EletricidadeB;
+
     private SpriteRenderer OlhosBrilantesRenderer;
 
     private Vector3 pontoAnterior;
     private Vector3 deslocamnto;
 
-    private float nextAtack = 5f;
+    private float nextAtack = 3f;
     public float TempoMinimoentreAtaques = 1f;
     public float TempoMaximoentreAtaques = 10f;
     public Transform PontoA;
@@ -179,7 +181,7 @@ public class boss_ifunny : MonoBehaviour
         StartCoroutine(PodeAtacarTrue1B());
         IEnumerator PodeAtacarTrue1B()
         {
-            yield return new WaitForSeconds(5.5f);
+            yield return new WaitForSeconds(3f);
             podeAtacar = true;
         }
     }
@@ -187,7 +189,7 @@ public class boss_ifunny : MonoBehaviour
     void Funcao1_C()
     {
 
-        Vector3 alvo = new Vector2(transform.position.x,5.423934f);
+        Vector3 alvo = new Vector2(transform.position.x,4.423934f);
 
 
         StartCoroutine(Ataque1C());
@@ -222,7 +224,7 @@ public class boss_ifunny : MonoBehaviour
         StartCoroutine(PodeAtacarTrue1C());
         IEnumerator PodeAtacarTrue1C()
         {
-            yield return new WaitForSeconds(5.5f);
+            yield return new WaitForSeconds(3);
             podeAtacar = true;
         }
     }
@@ -282,7 +284,7 @@ public class boss_ifunny : MonoBehaviour
         StartCoroutine(PodeAtacarTrue2A());
         IEnumerator PodeAtacarTrue2A()
         {
-            yield return new WaitForSeconds(6.5f);
+            yield return new WaitForSeconds(5.5f);
             podeAtacar = true;
         }
     }
@@ -341,7 +343,7 @@ public class boss_ifunny : MonoBehaviour
         StartCoroutine(PodeAtacarTrue2B());
         IEnumerator PodeAtacarTrue2B()
         {
-            yield return new WaitForSeconds(6.5f);
+            yield return new WaitForSeconds(5.5f);
             podeAtacar = true;
         }
             
@@ -502,7 +504,7 @@ public class boss_ifunny : MonoBehaviour
             StartCoroutine(PodeAtacarTrue2C());
             IEnumerator PodeAtacarTrue2C()
             {
-                yield return new WaitForSeconds(2.5f);
+                yield return new WaitForSeconds(2f);
                 podeAtacar = true;
             }
         }
@@ -526,7 +528,7 @@ public class boss_ifunny : MonoBehaviour
         {
 
             OlhosBrilantesRenderer = GetComponent<SpriteRenderer>();
-            OlhosBrilantesRenderer.sprite = OlhosBrilantes;
+            OlhosBrilantesRenderer.sprite = Eletricidade;
 
             while (Vector3.Distance(transform.position, alvo) > 0.01f)
             {
@@ -535,7 +537,7 @@ public class boss_ifunny : MonoBehaviour
                 yield return null;
             }
             yield return new WaitForSeconds(0.5f);
-
+            OlhosBrilantesRenderer.sprite = EletricidadeB;
             Vector2 direcao = (PontoPlayer.position - transform.position).normalized;
 
             for (int i = 0; i < NumeroDeProjeteis; i++)
@@ -602,7 +604,7 @@ public class boss_ifunny : MonoBehaviour
         StartCoroutine(PodeAtacarTrue2B());
         IEnumerator PodeAtacarTrue2B()
         {
-            yield return new WaitForSeconds(7.5f);
+            yield return new WaitForSeconds(5.5f);
             podeAtacar = true;
         }
 
@@ -627,7 +629,7 @@ public class boss_ifunny : MonoBehaviour
         {
 
             OlhosBrilantesRenderer = GetComponent<SpriteRenderer>();
-            OlhosBrilantesRenderer.sprite = OlhosBrilantes;
+            OlhosBrilantesRenderer.sprite = Eletricidade;
 
             while (Vector3.Distance(transform.position, alvo) > 0.01f)
             {
@@ -636,7 +638,7 @@ public class boss_ifunny : MonoBehaviour
                 yield return null;
             }
             yield return new WaitForSeconds(0.5f);
-
+            OlhosBrilantesRenderer.sprite = EletricidadeB;
 
             Vector2 direcao = (PontoPlayer.position - transform.position).normalized;
 
@@ -704,7 +706,7 @@ public class boss_ifunny : MonoBehaviour
         StartCoroutine(PodeAtacarTrue2B());
         IEnumerator PodeAtacarTrue2B()
         {
-            yield return new WaitForSeconds(7.5f);
+            yield return new WaitForSeconds(5.5f);
             podeAtacar = true;
         }
 
