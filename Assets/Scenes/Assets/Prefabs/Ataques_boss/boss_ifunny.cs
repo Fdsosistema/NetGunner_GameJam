@@ -377,7 +377,7 @@ public class boss_ifunny : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             GameObject ataqueAvisoC = Instantiate(Ataque2C1Aviso, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
 
             Destroy(ataqueAvisoC);
             GameObject AtaqueRaioC = Instantiate(Ataque2C1, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
@@ -413,7 +413,7 @@ public class boss_ifunny : MonoBehaviour
 
             IEnumerator TempoC2()
             {
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
 
                 Destroy(ataqueavisoC2);
                 GameObject AtaqueRaioC2 = Instantiate(Ataque2C2, new Vector3(8.83f, 0.1544533f, -0.02648988f), Quaternion.identity);
@@ -442,7 +442,7 @@ public class boss_ifunny : MonoBehaviour
 
         IEnumerator TempoC3()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
 
             Destroy(ataqueavisoC3);
             GameObject AtaqueRaioC3 = Instantiate(Ataque2C3, new Vector3(8.83f, 0.1544533f, -0.02648988f), Quaternion.identity);
@@ -472,7 +472,7 @@ public class boss_ifunny : MonoBehaviour
 
         IEnumerator TempoC3()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
 
             Destroy(ataqueavisoC4);
             GameObject AtaqueRaioC4 = Instantiate(Ataque2C4, new Vector3(8.83f, 0.1544533f, -0.02648988f), Quaternion.identity);
@@ -504,7 +504,7 @@ public class boss_ifunny : MonoBehaviour
             StartCoroutine(PodeAtacarTrue2C());
             IEnumerator PodeAtacarTrue2C()
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1f);
                 podeAtacar = true;
             }
         }

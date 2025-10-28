@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e305b43cc1f854438a873403f07fabf
+guid: a78083c39731c9749a0a189500955c72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7899343668188097810
-    second: Chud-personagem-andando_0
+      213: 4473043391697584161
+    second: Chud-personagem-pulando_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,13 +178,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chud-personagem-andando_0
+      name: Chud-personagem-pulando_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 26
+        x: 136
+        y: 15
         width: 105
-        height: 326
+        height: 361
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee2daea49c4ef5290800000000000000
-      internalID: -7899343668188097810
+      spriteID: 1200b0bf341731e30800000000000000
+      internalID: 4473043391697584161
       vertices: []
       indices: 
       edges: []
@@ -203,7 +203,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 15e40af0b34b00340bfe7e2ac59f9554
+    spriteID: 682cd6fece4bb114d83974837d7f0d2a
     internalID: 0
     vertices: []
     indices: 
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Chud-personagem-andando_0: -7899343668188097810
+      Chud-personagem-pulando_0: 4473043391697584161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

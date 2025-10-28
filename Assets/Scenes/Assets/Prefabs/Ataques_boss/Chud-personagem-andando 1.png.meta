@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e305b43cc1f854438a873403f07fabf
+guid: 1409f46820ec9944a853d4ec64887f46
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -181,8 +181,8 @@ TextureImporter:
       name: Chud-personagem-andando_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 26
+        x: 175
+        y: 21
         width: 105
         height: 326
       alignment: 0

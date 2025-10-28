@@ -13,6 +13,8 @@ public class Dash : MonoBehaviour
     public Transform checarChao;
     public float raioChecagem = 0.2f;
     public LayerMask chaoLayer;
+    public Animator animacao;
+    private bool Idle = true;
 
     private Rigidbody2D rb;
     private bool podeDarDash = true;    // Controla cooldown
@@ -26,8 +28,66 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
+
+       
+
         // Se já está em dash, ignora o controle comum
         if (estaDashando) return;
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            animacao.SetBool("isAndando", true);
+            Idle = false;
+        }
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            animacao.SetBool("isAndando", false);
+            Idle = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            animacao.SetBool("IsAndandoEsquerda", true);
+            Idle = false;
+        }
+        else if (Input.GetKeyUp(KeyCode.A))
+        {
+            animacao.SetBool("IsAndandoEsquerda", false);
+            Idle = true;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && PodePular)
+        {
+            animacao.SetBool("IsPulando", true);
+            Idle = false;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animacao.SetBool("IsPulando", false);
+            Idle = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animacao.SetBool("IsPulandoEsquerda", true);
+            Idle = false;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animacao.SetBool("IsPulandoEsquerda", false);
+            Idle = true;
+        }
+
+        if (Idle == true) {
+            animacao.SetBool("isIdle", true);
+        }
+        else if (Idle == false)
+        {
+            animacao.SetBool("isIdle", false);
+
+        }
+
 
         // Movimento horizontal
         float movimento = Input.GetAxisRaw("Horizontal");
