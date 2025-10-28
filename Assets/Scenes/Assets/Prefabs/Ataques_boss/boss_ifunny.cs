@@ -56,14 +56,14 @@ public class boss_ifunny : MonoBehaviour
     {
         functions = new Action[]
           {
-  Funcao1_A,
- Funcao1_B,
- Funcao1_C,
- Funcao2_A,
- Funcao2_B,
+  //Funcao1_A,
+ //Funcao1_B,
+ //Funcao1_C,
+ //Funcao2_A,
+ //Funcao2_B,
  Funcao2_C,
- Funcao3,
- Funcao3_B,
+ //Funcao3,
+ //Funcao3_B,
           };
 
 
@@ -253,7 +253,7 @@ public class boss_ifunny : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             GameObject ataqueAviso = Instantiate(Ataque2Aviso_A, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
 
             Destroy(ataqueAviso);
             GameObject AtaqueRaio = Instantiate(Ataque2_A, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
@@ -312,7 +312,7 @@ public class boss_ifunny : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             GameObject ataqueAvisoB = Instantiate(Ataque2Aviso_B, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
 
             Destroy(ataqueAvisoB);
             GameObject AtaqueRaioB = Instantiate(Ataque2_B, new Vector3(7.560022f, -1.383803f, -0.02648988f), Quaternion.identity);
