@@ -562,7 +562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 4086367256927587079, guid: 763bbebb870b3b84fabcc393dc54b74e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2299,6 +2299,9 @@ MonoBehaviour:
   maxHealth: 150
   healthSlider: {fileID: 1775097992}
   tempoInvulneravel: 1
+  Imagem: {fileID: 162592868}
+  Segundo: {fileID: -8021364672786950424, guid: 6bcf152867052d940ac32a725fc6625a, type: 3}
+  Terceiro: {fileID: -6470460504253458178, guid: 73a9b68fa126719489d46831d0c43614, type: 3}
 --- !u!114 &857953270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,7 +3028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1287723010
 SpriteRenderer:
   m_ObjectHideFlags: 0

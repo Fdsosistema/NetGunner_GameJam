@@ -8,6 +8,12 @@ public class PlayerHealthSlider : MonoBehaviour
     public Slider healthSlider;
     public float tempoInvulneravel = 1f;
     private bool invulneravel = false;
+    public Image Imagem;
+   
+    public Sprite Segundo;
+    public Sprite Terceiro;
+    private SpriteRenderer Render;
+    private bool ImagemTrocada = false;
 
     void Start()
     {
@@ -19,7 +25,22 @@ public class PlayerHealthSlider : MonoBehaviour
     private void Update()
     {
          healthSlider.value = currentHealth;
-       
+
+
+        if (healthSlider.value <= 100 && healthSlider.value > 51)
+        {
+            Imagem.sprite = Segundo;
+            
+        }
+
+         if (healthSlider.value <= 51)
+            {
+         
+            Imagem.sprite = Terceiro;
+
+            }
+
+
     }
 
     public void TakeDamage(float dano)
