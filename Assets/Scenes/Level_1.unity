@@ -227,7 +227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.1604, y: 0}
+  m_AnchoredPosition: {x: -4.1604004, y: 33.80001}
   m_SizeDelta: {x: -18.3207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &72000421
@@ -539,7 +539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -604, y: 476}
+  m_AnchoredPosition: {x: -745.597, y: 383.17798}
   m_SizeDelta: {x: 73.1011, y: 73.1011}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162592868
@@ -2499,7 +2499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -605.403, y: 477.822}
+  m_AnchoredPosition: {x: -747, y: 385}
   m_SizeDelta: {x: 223.194, y: 224.357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970536715
@@ -3042,7 +3042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 33.8}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263112121
@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e8bee430e805f44999f0d90db297ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 550
+  vidaMaxima: 1
   duracaoPiscar: 0.05
   quantidadePiscos: 1
   Brilho: 1.5
@@ -4213,7 +4213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -189.78998, y: 477.89996}
+  m_AnchoredPosition: {x: -367, y: 356.63}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1775097992
