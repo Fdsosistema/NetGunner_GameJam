@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projetil_eletrico : MonoBehaviour
 {
-    public float dano = 10f; // Dano que o projétil causa
+    private float dano = 10f; // Dano que o projétil causa
 
     void Start()
     {

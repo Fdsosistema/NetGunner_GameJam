@@ -13,7 +13,7 @@ public class PlayerHealthSlider : MonoBehaviour
     public Sprite Segundo;
     public Sprite Terceiro;
     private SpriteRenderer Render;
-    private bool ImagemTrocada = false;
+    
 
     void Start()
     {

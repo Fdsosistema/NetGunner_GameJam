@@ -12,7 +12,7 @@ public class projetil_boss : MonoBehaviour
     private Vector3 pontoAnterior;
     private Vector3 deslocamnto;
    
-    public float dano = 10f;
+    private float dano = 15f;
 
 
     private void Start()

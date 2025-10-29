@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -47,6 +48,9 @@ public class Vida_boss : MonoBehaviour
 
         Debug.Log($"{gameObject.name} morreu!");
         Destroy(gameObject);
+        Cursor.visible = true;
+        SceneManager.LoadScene("Vitoria");
+        
     }
 
     IEnumerator Piscar()

@@ -3,7 +3,7 @@ using UnityEngine;
 public class DanoRaio : MonoBehaviour
 {
 
-    public float dano = 10f;
+    private float dano = 25f;
 
  
   
